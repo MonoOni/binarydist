@@ -2,9 +2,8 @@ Mono on i Project February 5, 2018
 
 2/5/18 Binary Preview Package Notes and Instructions 
 
-The Mono on i 
-Project began porting Mono to PASE on IBM i on January 19, 2018. There 
-are still numerous bugs to fix, and the port is hardly production-ready 
+The Mono on i Project began porting Mono to PASE on IBM i on January 19, 2018. 
+There are still numerous bugs to fix, and the port is hardly production-ready 
 as of yet. However, progress has been made at a very rapid pace, and we 
 would like others to try it out and report problems. We encourage users 
 to report issues to the Mono on i Project by opening an issue on our 
@@ -25,12 +24,12 @@ installing Mono.
 It is strongly recommended that the following IBM LPPs and PTFs are 
 installed: 
 
-LPP 5733-SC1 OpenSSH/OpenSSL LPP 
+LPP 5733-SC1 OpenSSH/OpenSSL 
 
-5733-OPS Open Source Solutions Option 7 (Tools) 
+LPP 5733-OPS Open Source Solutions Option 7 (Tools) 
 
 Open Source Solutions PTF Group SF99123 (7.1), SF99223 (7.2), 
-SF99725 (7.3) Level 5 (or later) 
+or SF99725 (7.3) Level 5 (or later) 
 
 ## Included contents 
 
@@ -108,7 +107,8 @@ looking into alternative solutions currently.
 
 ## Installation instructions 
 
-* STUFF ABOUT WHERE TO DOWNLOAD 
+* The latest release is available from
+ <https://github.com/MonoOni/binarydist/releases>
 
 * Create an empty save file with which to receive the save file that you 
 downloaded to your PC. To do so, open up a 5250 "green screen" session 
@@ -136,7 +136,7 @@ session into a PASE shell, or, less optimally, CALL QP2TERM. Once you
 are in the PASE shell, run the following commands to make the Mono 
 commands available to your shell: 
 
-$ PATH=/opt/mono/bin;$PATH 
+$ PATH=/opt/mono/bin:$PATH 
 $ export PATH 
 
 * Now, invoke the Mono C# compiler to compile hello.cs: 
