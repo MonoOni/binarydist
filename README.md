@@ -1,6 +1,8 @@
 Mono on i Project February 5, 2018 
 
-2/5/18 Binary Preview Package Notes and Instructions The Mono on i 
+2/5/18 Binary Preview Package Notes and Instructions 
+
+The Mono on i 
 Project began porting Mono to PASE on IBM i on January 19, 2018. There 
 are still numerous bugs to fix, and the port is hardly production-ready 
 as of yet. However, progress has been made at a very rapid pace, and we 
