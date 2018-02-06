@@ -137,6 +137,7 @@ are in the PASE shell, run the following commands to make the Mono
 commands available to your shell: 
 
 $ PATH=/opt/mono/bin:$PATH 
+
 $ export PATH 
 
 * Now, invoke the Mono C# compiler to compile hello.cs: 
