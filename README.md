@@ -120,13 +120,13 @@ looking into alternative solutions currently.
 
 * Create an empty save file with which to receive the save file that you 
 downloaded to your PC. To do so, open up a 5250 "green screen" session 
-and run the command "CRTSAVF SAVF(QGPL/MONOBIN)" on your system. 
+and run the command "CRTSAVF SAVF(QGPL/MONO0207)" on your system. 
 
 * Transfer the save file using a command line FTP client in binary mode 
-to QGPL/MONOBIN. 
+to QGPL/MONO0207. 
 
 * Restore the Mono on i binaries by running "RST 
-DEV('/QSYS.LIB/QGPL.LIB/MONOBIN.FILE') OBJ('/QOpenSys/opt/mono')" on 
+DEV('/QSYS.LIB/QGPL.LIB/MONO0207.FILE') OBJ('/QOpenSys/opt/mono')" on 
 your system. 
 
 * After unpacking the save file, it is important to make sure that a 
