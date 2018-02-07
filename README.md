@@ -1,6 +1,6 @@
-Mono on i Project February 5, 2018 
+Mono on i Project February 7, 2018 
 
-2/5/18 Binary Preview Package Notes and Instructions 
+2/7/18 Binary Preview Package Notes and Instructions 
 
 The Mono on i Project began porting Mono to PASE on IBM i on January 19, 2018. 
 There are still numerous bugs to fix, and the port is hardly production-ready 
@@ -8,6 +8,14 @@ as of yet. However, progress has been made at a very rapid pace, and we
 would like others to try it out and report problems. We encourage users 
 to report issues to the Mono on i Project by opening an issue on our 
 GitHub page at <https://github.com/MonoOni/binarydist/issues> 
+
+## Changes in the 2/7/18 release
+
+Attempting to run Mono on 7.1 resulted in error messages relating to mkdtemp.
+We discovered that Mono's built in glib has an implementation of mkdtemp,
+so we modified the code to use that instead. Please note that we have not had
+the opportunity to test this on a real 7.1 system as of this time and would
+appreciate feedback.
 
 ## Required system 
 
@@ -131,7 +139,9 @@ already been created for you. To check if it exists, run the command
 ## Compile and run your first Mono program 
 
 * A sample "Hello, World!" program is included in 
-/opt/mono/samples/hello.cs * To compile it, you can either open a SSH 
+/opt/mono/samples/hello.cs 
+
+* To compile it, you can either open a SSH 
 session into a PASE shell, or, less optimally, CALL QP2TERM. Once you 
 are in the PASE shell, run the following commands to make the Mono 
 commands available to your shell: 
@@ -152,8 +162,8 @@ file to your PC and then run it on Windows. Try it!
 * Now, to run the program: 
 
 $ mono hello.exe 
+
 Hello from Mono for the IBM i! 
-$ 
 
 * Similarly, you can compile a .NET program on Visual Studio for 
 Windows, copy it to your IBM i system, and run it using the "mono" 
