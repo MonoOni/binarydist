@@ -25,7 +25,7 @@ testing on 7.2, and work is being done to make it run on 7.1. The team
 is interested in hearing any reports regarding compatibility. 
 
 It is extremely critical to ensure that the system QCCSID value is 
-properly set. Check your QCCSID value with "DSPSYSVAL QCCSID". If it is 
+properly set. Check your QCCSID value with `DSPSYSVAL QCCSID`. If it is 
 65535, please set it to the proper value and sign off and on before 
 installing Mono. 
 
@@ -47,7 +47,8 @@ or SF99725 (7.3) Level 5 (or later)
 
 * xbuild (non-Microsoft solution/project make tool) 
 
-* vbnc (non-Roslyn Visual Basic.NET compiler; supports VB 2010) 
+* vbnc (non-Roslyn Visual Basic.NET compiler; supports VB 2005,
+partial VB 2010 support) 
 
 * xsp (stand-alone ASP.NET server) 
 
