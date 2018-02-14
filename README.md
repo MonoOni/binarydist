@@ -1,6 +1,6 @@
-*Mono on i Project February 9, 2018*
+*Mono on i Project February 14, 2018*
 
-# 2/7/18 Binary Preview Package Notes and Instructions 
+# 2/14/18 Binary Preview Package Notes and Instructions 
 
 The Mono on i Project began porting Mono to PASE on IBM i on January 19, 2018. 
 There are still numerous bugs to fix, and the port is hardly production-ready 
@@ -9,7 +9,19 @@ would like others to try it out and report problems. We encourage users
 to report issues to the Mono on i Project by opening an issue on our 
 GitHub page at <https://github.com/MonoOni/binarydist/issues> 
 
-## Changes in the 2/7/18 release
+## Changelog
+
+### Changes in the 2/14/18 release
+
+* PowerPC processor features are more accurately detected.
+
+* `System.Environment.OSVersion` now properly reports the operating system version.
+
+* Fix a big with getting array sizes.
+
+* Compatibility issues with i 7.1 have been resolved to the point where the runtime can successfully run programs.
+
+### Changes in the 2/7/18 release
 
 Attempting to run Mono on 7.1 resulted in error messages relating to mkdtemp.
 We discovered that Mono's built in glib has an implementation of mkdtemp,
@@ -19,7 +31,7 @@ appreciate feedback.
 
 ## Required system 
 
-Either AIX 6.1 TL9 or i 7.2. The JIT compiler will automatically adjust 
+Either AIX 6.1 TL9 or i 7.1. The JIT compiler will automatically adjust 
 parameters to optimize for the current CPU. We have primarily done PASE 
 testing on 7.2, and work is being done to make it run on 7.1. The team
 is interested in hearing any reports regarding compatibility. 
@@ -77,13 +89,19 @@ controls refer to System.Drawing, which means that all but the smallest
 ASP.net pages will likely run into the aforementioned problems with 
 System.Drawing. 
 
+* MSBuild is not installed.
+
 ### Compatibility
 
 * i 7.1 is not supported at the moment, but the team is actively
 working in this.
 
-* NuGet (not included) may not run on PASE, when it does on AIX. This 
-will be investigated. 
+* NuGet has issues managing packages and dealing with build systems.
+Work to investigate the causes is being done.
+
+* TLS may not work as expected, due to either missing certifications, or
+deficiencies with Mono's managed TLS stack. BoringTLS is being investigated
+for porting, and certificates can be managed with included Mono tools.
 
 ### Native interop and system support
 
