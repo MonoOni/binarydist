@@ -1,6 +1,6 @@
-*Mono on i Project February 14, 2018*
+*Mono on i Project February 15, 2018*
 
-# 2/14/18 Binary Preview Package Notes and Instructions 
+# 2/15/18 Binary Preview Package Notes and Instructions 
 
 The Mono on i Project began porting Mono to PASE on IBM i on January 19, 2018. 
 There are still numerous bugs to fix, and the port is hardly production-ready 
@@ -11,6 +11,13 @@ GitHub page at <https://github.com/MonoOni/binarydist/issues>
 
 ## Changelog
 
+### Changes in the 2/15/18 release
+
+* libintl is properly packaged.
+
+* In this build, special features allowing the JIT to use new CPU instructions of
+POWER7 processors have been disabled due to reports of issues when enabled.
+
 ### Changes in the 2/14/18 release
 
 * PowerPC processor features are more accurately detected.
@@ -19,7 +26,8 @@ GitHub page at <https://github.com/MonoOni/binarydist/issues>
 
 * Fix a big with getting array sizes.
 
-* Compatibility issues with i 7.1 have been resolved to the point where the runtime can successfully run programs.
+* Compatibility issues with i 7.1 have been resolved to the point where the
+runtime can successfully run programs.
 
 ### Changes in the 2/7/18 release
 
