@@ -191,13 +191,16 @@ are in the PASE shell, run the following commands to make the Mono
 commands available to your shell: 
 
 ```
-$ export PATH=/opt/mono/bin:$PATH 
+$ PATH=/opt/mono/bin:$PATH
+$ export PATH
 ```
-
+* Copy the hello.cs file from /opt/mono/samples
+```
+$ cp /opt/mono/samples/hello.cs hello.cs
 * Now, invoke the Mono C# compiler to compile hello.cs: 
 
 ```
-$ mcs /opt/mono/samples/hello.cs 
+$ mcs hello.cs 
 ```
 
 * A file named hello.exe will be created in your current directory. This 
