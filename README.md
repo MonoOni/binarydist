@@ -19,8 +19,8 @@ GitHub page at <https://github.com/MonoOni/binarydist/issues>
 
 * libintl is properly packaged.
 
-* In this build, special features allowing the JIT to use new CPU instructions of
-POWER7 processors have been disabled due to reports of issues when enabled.
+* In this build, special features allowing the JIT to use new CPU instructions
+of POWER7 processors have been disabled due to reports of issues when enabled.
 
 ### Changes in the 2/13/18 release
 
@@ -37,9 +37,7 @@ runtime can successfully run programs.
 
 Attempting to run Mono on 7.1 resulted in error messages relating to mkdtemp.
 We discovered that Mono's built in glib has an implementation of mkdtemp,
-so we modified the code to use that instead. Please note that we have not had
-the opportunity to test this on a real 7.1 system as of this time and would
-appreciate feedback.
+so we modified the code to use that instead.
 
 ## Required system 
 
@@ -166,13 +164,13 @@ likely do not function due to binary format differences in AIX/PASE.
 
 * Create an empty save file with which to receive the save file that you 
 downloaded to your PC. To do so, open up a 5250 "green screen" session 
-and run the command `CRTSAVF SAVF(QGPL/MONO0207)` on your system. 
+and run the command `CRTSAVF SAVF(QGPL/MONO0217)` on your system. 
 
 * Transfer the save file using a command line FTP client in binary mode 
-to QGPL/MONO0207. 
+to `QGPL/MONO0217`. 
 
 * Restore the Mono on i binaries by running 
-`RST DEV('/QSYS.LIB/QGPL.LIB/MONO0207.FILE') OBJ('/QOpenSys/opt/mono')`
+`RST DEV('/QSYS.LIB/QGPL.LIB/MONO0217.FILE') OBJ('/QOpenSys/opt/mono')`
 on your system. 
 
 * After unpacking the save file, it is important to make sure that a 
@@ -188,7 +186,7 @@ already been created for you. To check if it exists, run the command
 /opt/mono/samples/hello.cs 
 
 * To compile it, you can either open a SSH 
-session into a PASE shell, or, less optimally, CALL QP2TERM. Once you 
+session into a PASE shell, or, less optimally, `CALL QP2TERM`. Once you 
 are in the PASE shell, run the following commands to make the Mono 
 commands available to your shell: 
 
