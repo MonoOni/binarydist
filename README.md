@@ -1,6 +1,6 @@
-*Mono on i Project February 15, 2018*
+*Mono on i Project February 17, 2018*
 
-# 2/14/18 Binary Preview Package Notes and Instructions 
+# 2/17/18 Binary Preview Package Notes and Instructions 
 
 The Mono on i Project began porting Mono to PASE on IBM i on January 19, 2018. 
 There are still numerous bugs to fix, and the port is hardly production-ready 
@@ -10,6 +10,10 @@ to report issues to the Mono on i Project by opening an issue on our
 GitHub page at <https://github.com/MonoOni/binarydist/issues> 
 
 ## Changelog
+
+### Changes in the 2/17/18 release
+
+* Spurious errors with asynchronous threaded I/O have been fixed.
 
 ### Changes in the 2/14/18 release
 
@@ -40,9 +44,8 @@ appreciate feedback.
 ## Required system 
 
 Either AIX 6.1 TL9 or i 7.1. The JIT compiler will automatically adjust 
-parameters to optimize for the current CPU. We have primarily done PASE 
-testing on 7.2, and work is being done to make it run on 7.1. The team
-is interested in hearing any reports regarding compatibility. 
+parameters to optimize for the current CPU. Testing is primarily done on AIX,
+then on i 7.2, then i 7.1.
 
 It is extremely critical to ensure that the system QCCSID value is 
 properly set. Check your QCCSID value with `DSPSYSVAL QCCSID`. If it is 
