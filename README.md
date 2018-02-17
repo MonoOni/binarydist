@@ -194,9 +194,13 @@ commands available to your shell:
 $ PATH=/opt/mono/bin:$PATH
 $ export PATH
 ```
+
 * Copy the hello.cs file from /opt/mono/samples
+
 ```
 $ cp /opt/mono/samples/hello.cs hello.cs
+```
+
 * Now, invoke the Mono C# compiler to compile hello.cs: 
 
 ```
