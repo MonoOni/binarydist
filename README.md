@@ -1,6 +1,6 @@
-*Mono on i Project February 17, 2018*
+*Mono on i Project February 27, 2018*
 
-# 2/17/18 Binary Preview Package Notes and Instructions 
+# 2/27/18 Binary Preview Package Notes and Instructions 
 
 The Mono on i Project began porting Mono to PASE on IBM i on January 19, 2018. 
 There are still numerous bugs to fix, and the port is hardly production-ready 
@@ -10,6 +10,14 @@ to report issues to the Mono on i Project by opening an issue on our
 GitHub page at <https://github.com/MonoOni/binarydist/issues> 
 
 ## Changelog
+
+### Changes in the 2/27/18 release
+
+* Updated to latest changeset.
+
+* Async callbacks have been enabled for the runtime.
+
+* Explicit null checks are always enabled due to null pages..
 
 ### Changes in the 2/17/18 release
 
@@ -102,9 +110,6 @@ System.Drawing.
 
 ### Compatibility
 
-* i 7.1 is not supported at the moment, but the team is actively
-working in this.
-
 * NuGet has issues managing packages and dealing with build systems.
 Work to investigate the causes is being done.
 
@@ -151,9 +156,6 @@ looking into alternative solutions currently.
 `TypeInitializationException` can crash the runtime. This is being
 investigated.
 
-* Debugging a dynamically linked Mono may cause issues with GDB. A 
-statically linked Mono may be shipped later. 
-
 * The Ahead of Time compiler and bundling have not been tested, and 
 likely do not function due to binary format differences in AIX/PASE. 
 
@@ -164,13 +166,13 @@ likely do not function due to binary format differences in AIX/PASE.
 
 * Create an empty save file with which to receive the save file that you 
 downloaded to your PC. To do so, open up a 5250 "green screen" session 
-and run the command `CRTSAVF SAVF(QGPL/MONO0217)` on your system. 
+and run the command `CRTSAVF SAVF(QGPL/MONO0227)` on your system. 
 
 * Transfer the save file using a command line FTP client in binary mode 
-to `QGPL/MONO0217`. 
+to `QGPL/MONO0227`. 
 
 * Restore the Mono on i binaries by running 
-`RST DEV('/QSYS.LIB/QGPL.LIB/MONO0217.FILE') OBJ('/QOpenSys/opt/mono')`
+`RST DEV('/QSYS.LIB/QGPL.LIB/MONO0227.FILE') OBJ('/QOpenSys/opt/mono')`
 on your system. 
 
 * After unpacking the save file, it is important to make sure that a 
