@@ -173,13 +173,13 @@ AIX binary format.
 
 * Create an empty save file with which to receive the save file that you 
 downloaded to your PC. To do so, open up a 5250 "green screen" session 
-and run the command `CRTSAVF SAVF(QGPL/MONO0227)` on your system. 
+and run the command `CRTSAVF SAVF(QGPL/MONO0313)` on your system. 
 
 * Transfer the save file using a command line FTP client in binary mode 
 to `QGPL/MONO0227`. 
 
 * Restore the Mono on i binaries by running 
-`RST DEV('/QSYS.LIB/QGPL.LIB/MONO0227.FILE') OBJ('/QOpenSys/opt/mono')`
+`RST DEV('/QSYS.LIB/QGPL.LIB/MONO0313.FILE') OBJ('/QOpenSys/opt/mono')`
 on your system. 
 
 * After unpacking the save file, it is important to make sure that a 
