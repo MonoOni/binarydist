@@ -176,7 +176,7 @@ downloaded to your PC. To do so, open up a 5250 "green screen" session
 and run the command `CRTSAVF SAVF(QGPL/MONO0313)` on your system. 
 
 * Transfer the save file using a command line FTP client in binary mode 
-to `QGPL/MONO0227`. 
+to `QGPL/MONO0313`. 
 
 * Restore the Mono on i binaries by running 
 `RST DEV('/QSYS.LIB/QGPL.LIB/MONO0313.FILE') OBJ('/QOpenSys/opt/mono')`
