@@ -1,4 +1,4 @@
-*Mono on i Project February 27, 2018*
+*Mono on i Project March 13, 2018*
 
 # 2/27/18 Binary Preview Package Notes and Instructions 
 
@@ -10,6 +10,14 @@ to report issues to the Mono on i Project by opening an issue on our
 GitHub page at <https://github.com/MonoOni/binarydist/issues> 
 
 ## Changelog
+
+### Changes in the 3/13/18 release
+
+* Updated to latest changeset.
+
+* BoringTLS is now available, with TLSv1.2 support. Certificates will need to be installed to trust remote sites.
+
+* An experimental patch to resolve exception crashes in static constructors has been integrated. Thanks to Bernhard for trying to fix this!
 
 ### Changes in the 2/27/18 release
 
@@ -113,10 +121,6 @@ System.Drawing.
 * NuGet has issues managing packages and dealing with build systems.
 Work to investigate the causes is being done.
 
-* TLS may not work as expected, due to either missing certifications, or
-deficiencies with Mono's managed TLS stack. BoringTLS is being investigated
-for porting, and certificates can be managed with included Mono tools.
-
 ### Native interop and system support
 
 * Debug messages such as below will be printed during normal operation. 
@@ -154,10 +158,13 @@ looking into alternative solutions currently.
 
 * Exceptions in class constructors that would throw
 `TypeInitializationException` can crash the runtime. This is being
-investigated.
+investigated. (A patch has been created, but due to problems with Linux,
+may not be integrated into upstream sources yet.)
 
-* The Ahead of Time compiler and bundling have not been tested, and 
-likely do not function due to binary format differences in AIX/PASE. 
+* mkbundle will not function.
+
+* The Ahead of Time compiler will not function, due to not understanding the
+AIX binary format.
 
 ## Installation instructions 
 
@@ -227,3 +234,8 @@ Windows, copy it to your IBM i system, and run it using the "mono"
 command. Be aware though, that this may unearth numerous undiscovered 
 bugs in the Mono for IBM i port. 
 
+## TLS certificates
+
+Out of the box, the runtime's TLS layer won't trust anything due to lacking
+certificates for it. You can install certificates into Mono using [the same
+tools](http://www.mono-project.com/docs/faq/security/#secure-socket-layer-ssl--transport-layer-security-tls) as Mono uses on other systems.
