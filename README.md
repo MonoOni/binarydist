@@ -1,6 +1,6 @@
-*Mono on i Project March 27, 2018*
+*Mono on i Project April 10, 2018*
 
-# 3/27/18 Binary Preview Package Notes and Instructions 
+# 4/10/18 Binary Preview Package Notes and Instructions 
 
 The Mono on i Project began porting Mono to PASE on IBM i on January 19, 2018. 
 There are still numerous bugs to fix, and the port is hardly production-ready 
@@ -10,6 +10,10 @@ to report issues to the Mono on i Project by opening an issue on our
 GitHub page at <https://github.com/MonoOni/binarydist/issues> 
 
 ## Changelog
+
+### Changes in the 4/10/18 release
+
+* Updated to latest changeset.
 
 ### Changes in the 3/27/18 release
 
@@ -99,33 +103,15 @@ partial VB 2010 support)
 
 ## Known issues 
 
-### Missing features
+Please see the [issues page](https://github.com/MonoOni/binarydist/issues) for a list of known issues and to file further ones.
 
-* Roslyn won't run and will immediately throw a SIGTRAP. Due to the 
-complexity debugging and porting Roslyn, this will have to wait. 
-
-* Shared performance counters have been disabled due to lack of POSIX 
-shared memory functions on PASE. 
-
-* The interpeter is enabled, but will not run due to lack of support for 
-POWER for interpeter-generated trampolines. 
-
-* System.Drawing will not work yet, due to missing libgdiplus.
+<!-- Removed swathes better served by the issues page -->
 
 * FastCGI and mod_mono servers are shipped, but untested. XSP can be 
 used as a development server in the meantime. Be aware that many ASP.net 
 controls refer to System.Drawing, which means that all but the smallest 
 ASP.net pages will likely run into the aforementioned problems with 
 System.Drawing. 
-
-* MSBuild is not installed.
-
-### Compatibility
-
-* NuGet has issues managing packages and dealing with build systems.
-Work to investigate the causes is being done.
-
-### Native interop and system support
 
 * Debug messages such as below will be printed during normal operation. 
 This is expected, often due to semantic differences between other Unices 
@@ -158,18 +144,6 @@ provider included within iACS calls into a Win32 DLL, which
 unfortunately means that we cannot use it on the IBM i. The team is 
 looking into alternative solutions currently. 
 
-### Runtime and JIT
-
-* Exceptions in class constructors that would throw
-`TypeInitializationException` can crash the runtime. This is being
-investigated. (A patch has been created, but due to problems with Linux,
-may not be integrated into upstream sources yet.)
-
-* mkbundle will not function.
-
-* The Ahead of Time compiler will not function, due to not understanding the
-AIX binary format.
-
 ## Installation instructions 
 
 * The latest release is available from
@@ -177,13 +151,13 @@ AIX binary format.
 
 * Create an empty save file with which to receive the save file that you 
 downloaded to your PC. To do so, open up a 5250 "green screen" session 
-and run the command `CRTSAVF SAVF(QGPL/MONO0327)` on your system. 
+and run the command `CRTSAVF SAVF(QGPL/MONO0410)` on your system. 
 
 * Transfer the save file using a command line FTP client in binary mode 
-to `QGPL/MONO0327`. 
+to `QGPL/MONO0410`. 
 
 * Restore the Mono on i binaries by running 
-`RST DEV('/QSYS.LIB/QGPL.LIB/MONO0327.FILE') OBJ('/QOpenSys/opt/mono')`
+`RST DEV('/QSYS.LIB/QGPL.LIB/MONO0410.FILE') OBJ('/QOpenSys/opt/mono')`
 on your system. 
 
 * After unpacking the save file, it is important to make sure that a 
