@@ -1,6 +1,6 @@
-*Mono on i Project April 28, 2018*
+*Mono on i Project June 26, 2018*
 
-# 4/28/18 Binary Preview Package Notes and Instructions 
+# 6/26/18 Binary Preview Package Notes and Instructions 
 
 The Mono on i Project began porting Mono to PASE on IBM i on January 19, 2018. 
 There are still numerous bugs to fix, and the port is hardly production-ready 
@@ -11,9 +11,17 @@ to report issues to the Mono on i Project by opening an issue at our
 
 ## Changelog
 
+### Changes in the 6/26/18 release
+
+* Updated to latest changeset. Upstream has done significant work, including progress towards Roslyn on PowerPC, `Span<T>` intrinsics, and further integration of the CoreFX platform abstraction layer. CoreFX PAL work will involve heavy work for AIX and PASE integration, and the beginnings of such work have been done.
+
+* Spurious messages when spawning new threads on AIX have been reduced.
+
+* System.Diagnostics.Process should function better on AIX.
+
 ### Changes in the 4/28/18 release
 
-* Updated to latest changset. Note upstream is doing refactoring work on tail calls, so we have applied an experimental patch to fix PPC support for such things.
+* Updated to latest changeset. Note upstream is doing refactoring work on tail calls, so we have applied an experimental patch to fix PPC support for such things.
 
 ### Changes in the 4/15/18 release
 
@@ -152,20 +160,20 @@ provider included within iACS calls into a Win32 DLL, which
 unfortunately means that we cannot use it on the IBM i. The team is 
 looking into alternative solutions currently. 
 
-## Installation instructions 
+## Installation instructions (on IBM i)
 
 * The latest release is available from
  <https://github.com/MonoOni/binarydist/releases>
 
 * Create an empty save file with which to receive the save file that you 
 downloaded to your PC. To do so, open up a 5250 "green screen" session 
-and run the command `CRTSAVF SAVF(QGPL/MONO0428)` on your system. 
+and run the command `CRTSAVF SAVF(QGPL/MONO062618)` on your system. 
 
 * Transfer the save file using a command line FTP client in binary mode 
-to `QGPL/MONO0428`. 
+to `QGPL/MONO062618`. 
 
 * Restore the Mono on i binaries by running 
-`RST DEV('/QSYS.LIB/QGPL.LIB/MONO0428.FILE') OBJ('/QOpenSys/opt/mono')`
+`RST DEV('/QSYS.LIB/QGPL.LIB/MONO062618.FILE') OBJ('/QOpenSys/opt/mono')`
 on your system. 
 
 * After unpacking the save file, it is important to make sure that a 
