@@ -1,6 +1,6 @@
-*Mono on i Project July 6, 2018*
+*Mono on i Project October 13, 2018*
 
-# 7/6/18 Binary Preview Package Notes and Instructions 
+# 10/13/18 Binary Preview Package Notes and Instructions 
 
 The Mono on i Project began porting Mono to PASE on IBM i on January 19, 2018. 
 There are still numerous bugs to fix, and the port is hardly production-ready 
@@ -10,6 +10,10 @@ to report issues to the Mono on i Project by opening an issue at our
 [GitHub issue tracker](https://github.com/MonoOni/binarydist/issues).
 
 ## Changelog
+
+### Changes in the 10/13/18 release
+
+* Updated to latest changeset.
 
 ### Changes in the 7/6/18 release
 
@@ -175,13 +179,13 @@ looking into alternative solutions currently.
 
 * Create an empty save file with which to receive the save file that you 
 downloaded to your PC. To do so, open up a 5250 "green screen" session 
-and run the command `CRTSAVF SAVF(QGPL/MONO070618)` on your system. 
+and run the command `CRTSAVF SAVF(QGPL/MONO101318)` on your system. 
 
 * Transfer the save file using a command line FTP client in binary mode 
-to `QGPL/MONO070618`. 
+to `QGPL/MONO101318`. 
 
 * Restore the Mono on i binaries by running 
-`RST DEV('/QSYS.LIB/QGPL.LIB/MONO070618.FILE') OBJ('/QOpenSys/opt/mono')`
+`RST DEV('/QSYS.LIB/QGPL.LIB/MONO101318.FILE') OBJ('/QOpenSys/opt/mono')`
 on your system. 
 
 * After unpacking the save file, it is important to make sure that a 
